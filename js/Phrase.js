@@ -10,7 +10,7 @@ class Phrase {
     }
     addPhraseToDisplay() {
 
-        const phraseUl = document.querySelector('ul',li);
+        const phraseUl = document.querySelector('ul');
         let displayPhrase = this.phrase;
         const regex = /[a-z]/i;
         for (let i = 0; i < displayPhrase.length; i++) {
@@ -23,7 +23,7 @@ class Phrase {
 
 
             } else if (displayPhrase[i] === ' ') {
-let li =document.createElement('li');
+                let li = document.createElement('li');
                 li.classList.add('space');
                 li.innerText(displayPhrase[i]);
                 phraseUl.appendChild(li);

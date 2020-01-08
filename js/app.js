@@ -16,20 +16,21 @@
 // console.log(`Phrase ${index} - phrase: ${phrase.phrase}`);
 
 //});
-const logPhrase = (phrase) => {
-console.log(`Phrase - phrase: `, phrase.phrase);
- };
- const game = new Game();
- const randomPhrase = game.getRandomPhrase();
-const phrase = new Phrase(randomPhrase.phrase);
+// const logPhrase = (phrase) => {
+// console.log(`Phrase - phrase: `, phrase.phrase);
+//  };
+//  const game = new Game();
+//  const randomPhrase = game.getRandomPhrase();
+//const phrase = new Phrase(randomPhrase.phrase);
 
+const phrase = new Phrase();
+ phrase = new Phrase(phrase);
+phrase.addPhraseToDisplay();
 
-phrase.addPhraseToDisplay;
+//  logPhrase(game.getRandomPhrase());
 
- logPhrase(game.getRandomPhrase());
-
- game = new Game();
- game.startGame();
+//  game = new Game();
+//  game.startGame();
 // logPhrase(game.getRandomPhrase());
 // logPhrase(game.getRandomPhrase());
 // logPhrase(game.getRandomPhrase());
