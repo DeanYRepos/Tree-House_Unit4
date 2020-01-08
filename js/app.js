@@ -19,13 +19,14 @@
 // const logPhrase = (phrase) => {
 // console.log(`Phrase - phrase: `, phrase.phrase);
 //  };
-//  const game = new Game();
-//  const randomPhrase = game.getRandomPhrase();
-//const phrase = new Phrase(randomPhrase.phrase);
+//   const game = new Game();
+// const randomPhrase = game.getRandomPhrase();
+// const phrase = new Phrase(randomPhrase.phrase);
 
-const phrase = new Phrase();
- phrase = new Phrase(phrase);
-phrase.addPhraseToDisplay();
+//const phrase3 = new Phrase('FUCK YOU');
+// const phrase2 = new Phrase();
+//console.log(phrase3)
+// phrase.addPhraseToDisplay();
 
 //  logPhrase(game.getRandomPhrase());
 
@@ -37,3 +38,9 @@ phrase.addPhraseToDisplay();
 // logPhrase(game.getRandomPhrase());
 // logPhrase(game.getRandomPhrase());
 
+const game =new Game();
+const randomPhrase = game.getRandomPhrase();
+const phrase = new Phrase (randomPhrase.phrase);
+const phrase2 = new Phrase('SHIT');
+
+phrase2.addPhraseToDisplay();
