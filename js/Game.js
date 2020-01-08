@@ -27,7 +27,7 @@ class Game {
                 phrase: 'I knew it was wrong I did it anyway'
 
             }, {
-                phrase: 'Stupid is a stupid does'
+                phrase: 'Dont forget to bring a towel '
 
             }
 
@@ -50,4 +50,17 @@ getRandomPhrase(){
     return this.createPhrases()[randomNumber];
 
 }
+
+startGame(){
+
+const start = document.getElementById('btn__reset');
+const overlay = document.getElementById('overlay');
+start.addEventListener('click',() => {
+
+overlay.classList.add('hide');
+
+})
+
+}
+
 };
