@@ -41,6 +41,6 @@
 const game =new Game();
 const randomPhrase = game.getRandomPhrase();
 const phrase = new Phrase (randomPhrase.phrase);
-const phrase2 = new Phrase('SHIT');
 
-phrase2.addPhraseToDisplay();
+
+phrase.addPhraseToDisplay();

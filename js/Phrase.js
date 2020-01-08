@@ -20,14 +20,14 @@ const div = document.getElementById('phrase');
             if (displayPhrase[i] === regex) {
                 let li = document.createElement('li');
                 li.classList.add('hide' ,'letter');
-                li.innerText(displayPhrase[i]);
+                li.innerText= displayPhrase[i];
                 phraseUl.appendChild(li);
                 div.appendChild(phraseUl);
 
             } else if (displayPhrase[i] === ' ') {
                 let li = document.createElement('li');
                 li.classList.add('space');
-                li.innerText(displayPhrase[i]);
+                li.innerText = displayPhrase[i];
                 phraseUl.appendChild(li);
                 div.appendChild(phraseUl);
 
