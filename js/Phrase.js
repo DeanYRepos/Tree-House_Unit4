@@ -13,23 +13,23 @@ class Phrase {
         const phraseUl = document.querySelector('ul');
         let displayPhrase = this.phrase;
         const regex = /[a-z]/i;
-const div = document.getElementById('phrase');
+
 
         for (let i = 0; i < displayPhrase.length; i++) {
 
-            if (displayPhrase[i] === regex) {
+            if (displayPhrase[i].match(regex)) {
                 let li = document.createElement('li');
-                li.classList.add('hide' ,'letter');
-                li.innerText= displayPhrase[i];
+                li.className = 'hide letter' + displayPhrase[i] ;
+                li.innerText = displayPhrase[i];
                 phraseUl.appendChild(li);
-                div.appendChild(phraseUl);
 
-            } else if (displayPhrase[i] === ' ') {
+
+            } else if (displayPhrase[i].match(' ')) {
                 let li = document.createElement('li');
                 li.classList.add('space');
                 li.innerText = displayPhrase[i];
                 phraseUl.appendChild(li);
-                div.appendChild(phraseUl);
+
 
             }
 

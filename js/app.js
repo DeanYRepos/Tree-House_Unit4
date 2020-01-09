@@ -23,7 +23,7 @@
 // const randomPhrase = game.getRandomPhrase();
 // const phrase = new Phrase(randomPhrase.phrase);
 
-//const phrase3 = new Phrase('FUCK YOU');
+//const phrase3 = new Phrase('Dang');
 // const phrase2 = new Phrase();
 //console.log(phrase3)
 // phrase.addPhraseToDisplay();
@@ -44,3 +44,8 @@ const phrase = new Phrase (randomPhrase.phrase);
 
 
 phrase.addPhraseToDisplay();
+console.log(phrase.addPhraseToDisplay());
+
+// const game = new Game();
+// game.startGame();
+// console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
