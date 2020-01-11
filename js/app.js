@@ -38,14 +38,15 @@
 // logPhrase(game.getRandomPhrase());
 // logPhrase(game.getRandomPhrase());
 
-const game =new Game();
-const randomPhrase = game.getRandomPhrase();
-const phrase = new Phrase (randomPhrase.phrase);
+// const game =new Game();
+// const randomPhrase = game.getRandomPhrase();
+// const phrase = new Phrase (randomPhrase.phrase);
 
 
-phrase.addPhraseToDisplay();
-console.log(phrase.addPhraseToDisplay());
+// phrase.addPhraseToDisplay();
+// console.log(addPhraseToDisplay());
 
-// const game = new Game();
-// game.startGame();
-// console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
+const game = new Game();
+game.startGame();
+
+console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
