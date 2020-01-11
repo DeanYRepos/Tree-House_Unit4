@@ -38,5 +38,28 @@ class Phrase {
 
 
     }
+    checkLetter(){
+ let letter = document.getElementsByClassName('keyrow');
+
+letter.addEventListener('click', (e)=> {
+    if(e.target === this.phrase.split(' ')){
+
+return true;
+
+    } else return false;
+
+    console.log(letter);
+})
+ 
+
+
+
+    }
+
+    showMatchedLetter() {
+
+
+
+    }
 
 };

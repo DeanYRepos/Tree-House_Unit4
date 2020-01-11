@@ -49,14 +49,15 @@
 
 // console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
 
-let game;
+let game; 
 const button = document.getElementById('btn__reset');
 
 
-button.addEventListener('click', () => {
+button.addEventListener('click', () => { //eventlistener activates new game when start button is clicked
 
 game = new Game ();
 game.startGame();
 
 
 })
+
