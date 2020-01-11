@@ -19,7 +19,7 @@ class Phrase {
 
             if (displayPhrase[i].match(regex)) {
                 let li = document.createElement('li');
-                li.className = 'hide letter' + displayPhrase[i] ;
+                li.classList.add('hide', 'letter');
                 li.innerText = displayPhrase[i];
                 phraseUl.appendChild(li);
 
