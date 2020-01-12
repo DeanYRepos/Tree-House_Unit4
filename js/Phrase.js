@@ -47,7 +47,7 @@ class Phrase {
 
     showMatchedLetter(letter) {
 
-        let letterMatch = document.getElementsByClassName('letter');
+        let letterMatch = document.querySelectorAll('.letter');
         for (let i = 0; i < letterMatch.length; i++) {
 
             if (letterMatch[i].innerHTML === letter) {
@@ -59,7 +59,7 @@ class Phrase {
 
 
             }
-
+            console.log(letterMatch[i].innerHTML);
         }
         return letterMatch;
     }
