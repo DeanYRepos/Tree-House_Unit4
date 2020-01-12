@@ -38,28 +38,29 @@ class Phrase {
 
 
     }
-    checkLetter(){
- let letter = document.getElementsByClassName('keyrow');
+    checkLetter(letter) {
 
-letter.addEventListener('click', (e)=> {
-    if(e.target === this.phrase.split(' ')){
-
-return true;
-
-    } else return false;
-
-    console.log(letter);
-})
- 
-
-
+        return this.phrase.includes(letter); //returns true is letter is included in phrase, false if not included
 
     }
 
-    showMatchedLetter() {
+
+    showMatchedLetter(letter) {
+
+        let letterMatch = document.getElementsByClassName('letter');
+        for (let i = 0; i < letterMatch.length; i++) {
+
+            if (letterMatch[i].innerHTML === letter) {
+
+
+                letterMatch[i].classList.remove('hide', 'letter');
+                letterMatch[i].classList.add('show', 'letter');
 
 
 
+            }
+
+        }
+        return letterMatch;
     }
-
 };
