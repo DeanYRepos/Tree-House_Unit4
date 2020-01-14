@@ -13,7 +13,7 @@ class Phrase {
         const phraseUl = document.querySelector('ul');
         let displayPhrase = this.phrase;
         const regex = /[a-z]/i;
-       
+
 
         for (let i = 0; i < displayPhrase.length; i++) {
 
@@ -53,15 +53,16 @@ class Phrase {
             if (letterMatch[i].innerHTML === letter) {
 
 
-                letterMatch[i].classList.remove('hide', 'letter');
-                letterMatch[i].classList.add('show', 'letter');
-return true;
+                letterMatch[i].classList.remove('hide', 'letter', '`${letterMatch[i]}`');
+                letterMatch[i].classList.add('show', 'letter','`${letterMatch[i]}`');
+               
+               return true;
 
 
-            }else return false;
-           
+            } else  { return false;}
+            return letterMatch;
+            console.log(letterMatch[i].innerHTML);
         }
-        return letterMatch;
-        console.log(letterMatch[i].innerHTML);
+       
     }
 };

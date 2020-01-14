@@ -46,14 +46,39 @@ class Game {
 
     }
 
-    startGame() {
+    startGame() { 
 
 
         let overlay = document.getElementById('overlay'); //calls overlay id
         overlay.style.visibility = 'hidden'; //hides overlay 
-        this.activePhrase = this.getRandomPhrase();
-        this.activePhrase.addPhraseToDisplay();
+        this.activePhrase = this.getRandomPhrase();  //sets random phrase to active phrase
+        this.activePhrase.addPhraseToDisplay();         //displays active phrase to display
 
+    }
+    handleInteraction(){
+
+
+
+    }
+    checkForWin(){
+
+        if(this.activePhrase.showMatchedLetter()){
+
+            return true;
+
+        }else return false;
+
+
+    }
+
+    removeLife(){
+
+
+    }
+    gameOver(){
+
+
+        
     }
 
 };
