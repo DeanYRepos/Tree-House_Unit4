@@ -62,7 +62,7 @@ class Game {
     }
     checkForWin(){
 
-        if(this.activePhrase.showMatchedLetter()){
+        if(this.activePhrase === this.showMatchedLetter()){
 
             return true;
 

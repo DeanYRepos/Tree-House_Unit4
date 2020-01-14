@@ -56,13 +56,13 @@ class Phrase {
                 letterMatch[i].classList.remove('hide', 'letter', '`${letterMatch[i]}`');
                 letterMatch[i].classList.add('show', 'letter','`${letterMatch[i]}`');
                
-               return true;
+               
 
 
-            } else  { return false;}
-            return letterMatch;
-            console.log(letterMatch[i].innerHTML);
+            }
+          
+           
         }
-       
+        return letterMatch;
     }
 };
