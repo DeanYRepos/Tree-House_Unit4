@@ -62,17 +62,23 @@ class Game {
     }
     checkForWin(){
 
-        if(this.activePhrase === this.showMatchedLetter()){
+const allLetters =document.querySelectorAll('.letter');
+const numLetters = allLetters.length;
+const shownLetters = document.querySelectorAll('.show');
+const guessLetters = shownLetters.length;
+
+
+        if(numLetters === guessLetters){
 
             return true;
 
-        }else return false;
+        } else return false;
+        
 
-
+    
     }
-
     removeLife(){
-
+        
 
     }
     gameOver(){
@@ -80,5 +86,4 @@ class Game {
 
         
     }
-
 };
