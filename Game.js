@@ -78,34 +78,35 @@ const guessLetters = shownLetters.length;
     
     }
     removeLife(){
+
+        const scoreBoard = document.querySelectorAll('li img');
+        this.missed += 1;
+
+       for(let i = 0; i< this.missed; i++){
         
-       for(let i = 0; i< this.activePhrase.length; i++){
-        this.activePhrase[i];
-            this.missed += 1;
-
-let heartChange = document.getElementsByClassName('tries');
-heartChange.src = "images/lostHeart.png";
+       
 
 
-if(this.missed === 5){
+ scoreBoard[i].src = "images/lostHeart.png";
+ if(this.missed === 5){
 
-this.gameOver();
-}
-        }
-        }
-
-
-
-        
-
+    this.gameOver();
     }
+       }
+
+        
+        }
+
+
+
+        
+
+    
+
     gameOver(){
 const overlay = document.getElementById('overlay');
 
-// if(){
 
-
-// }
 
         
     }
