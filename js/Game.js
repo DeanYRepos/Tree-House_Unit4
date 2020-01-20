@@ -109,7 +109,7 @@ class Game {
             overlay.classList.remove('start');
             overlay.classList.add('win');
 
-            overlay.style.display = 'visible';
+            overlay.style.visibility = 'visible';
             gameOverMessage.textContent = 'Congratulations, You Win!';
 
 
@@ -119,7 +119,7 @@ class Game {
             overlay.classList.remove('start');
             overlay.classList.add('lose');
 
-            overlay.style.display = 'visible';
+            overlay.style.visibility = 'visible';
             gameOverMessage.textContent = 'You Lose! Try again.';
 
         }
