@@ -57,15 +57,31 @@ class Game {
     }
 
     handleInteraction(keyChoosen) {
+        
+            if (!this.activePhrase.checkLetter(keyChoosen)) {
+                keyChoosen.classList.add('wrong');
+                this.removeLife();
 
-console.log(keyChoosen);
 
+            } else if (this.activePhrase.checkLetter(keyChoosen)) {
+                keyChoosen.classList.add('chosen');
+                this.activePhrase.showMatchedLetter();
+                
 
+               
+
+            }
+            this.checkForWin();
+            if (this.checkForWin()) {
+
+                this.gameOver();
          }
 
+         
 
-
-   
+console.log(key);
+    }
+    
     checkForWin() {
 
         const allLetters = document.querySelectorAll('.letter');
@@ -132,5 +148,4 @@ console.log(keyChoosen);
 
 
     }
-
 };
