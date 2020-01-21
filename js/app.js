@@ -62,3 +62,20 @@ game.startGame();
 })
 
 
+const keys = document.querySelectorAll('.key');
+keys.forEach ( key => {
+key.addEventListener('click', (e) =>{
+
+    game = new Game ();
+    game.handleInteraction(e.target);
+
+
+})
+   
+
+
+
+});
+
+
+

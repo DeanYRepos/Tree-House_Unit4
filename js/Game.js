@@ -55,11 +55,17 @@ class Game {
         this.activePhrase.addPhraseToDisplay(); //displays active phrase to display
 
     }
-    handleInteraction() {
+
+    handleInteraction(keyChoosen) {
+
+console.log(keyChoosen);
+
+
+         }
 
 
 
-    }
+   
     checkForWin() {
 
         const allLetters = document.querySelectorAll('.letter');
@@ -81,13 +87,13 @@ class Game {
 
         const scoreBoard = document.querySelectorAll('li img');
         this.missed += 1;
-        
+
 
         for (let i = 0; i < this.missed; i++) {
 
-                scoreBoard[i].src = "images/lostHeart.png";
-                console.log(this.missed);
-          
+            scoreBoard[i].src = "images/lostHeart.png";
+            console.log(this.missed);
+
         }
         if (this.missed === 5) {
 
@@ -126,4 +132,5 @@ class Game {
 
 
     }
+
 };
