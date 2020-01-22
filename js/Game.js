@@ -56,30 +56,34 @@ class Game {
 
     }
 
-    handleInteraction(keyChoosen) {
-        
-            if (!this.activePhrase.checkLetter(keyChoosen)) {
-                keyChoosen.classList.add('wrong');
-                this.removeLife();
-
-
-            } else if (this.activePhrase.checkLetter(keyChoosen)) {
-                keyChoosen.classList.add('chosen');
+    handleInteraction(keyChosen) {
+        //const letters = document.querySelectorAll('.letter');
+//console.log(keyChosen);
+       keyChosen.disabled = true;
+            if (this.activePhase === keyChosen) {
+                 
+                
+                keyChosen.classList.add('chosen');
+              
                 this.activePhrase.showMatchedLetter();
                 
+            } else  (this.activePhrase !== keyChosen) 
+                keyChosen.classList.add('wrong');
+                
+                this.removeLife();
 
                
 
-            }
+            
             this.checkForWin();
             if (this.checkForWin()) {
 
                 this.gameOver();
          }
 
-         
+        
 
-console.log(key);
+
     }
     
     checkForWin() {
