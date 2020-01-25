@@ -40,7 +40,7 @@ class Phrase {
     }
     checkLetter(letter) {
 
-        return this.phrase.includes(letter); //returns true is letter is included in phrase, false if not included
+        return this.phrase.includes(letter); //returns true if letter is included in phrase, false if not included
 
     }
 

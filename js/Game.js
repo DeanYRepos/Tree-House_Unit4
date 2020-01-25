@@ -59,16 +59,24 @@ class Game {
     handleInteraction(keyChosen) {
  //   const letters = document.querySelectorAll('.key');
 //console.log(keyChosen);
-       keyChosen.disabled = true;
+let keyChosenContent = keyChosen.textContent;
+              
        
-            if (this.activePhrase.checkLetter(keyChosen)) {
+            if (this.activePhrase.checkLetter(keyChosenContent)) {
                  
                // keyChosen.classList.remove('wrong');
+               keyChosen.disabled = true;
                 keyChosen.classList.add('chosen');
               
-                this.activePhrase.showMatchedLetter();
+                this.activePhrase.showMatchedLetter(keyChosenContent);
+                this.checkForWin();
+                if (this.checkForWin()) {
 
-            } else  ( !this.activePhrase.checkLetter(keyChosen)) 
+                    this.gameOver();
+             }
+    
+            } else  {
+            keyChosen.disabled = true;
                 keyChosen.classList.add('wrong');
                 
                 this.removeLife();
@@ -77,12 +85,7 @@ class Game {
 
             
             this.checkForWin();
-            
-            if (this.checkForWin()) {
-
-                this.gameOver();
-         }
-
+            }
         
 
 
