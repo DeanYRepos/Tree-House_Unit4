@@ -57,25 +57,27 @@ class Game {
     }
 
     handleInteraction(keyChosen) {
-        //const letters = document.querySelectorAll('.letter');
+ //   const letters = document.querySelectorAll('.key');
 //console.log(keyChosen);
        keyChosen.disabled = true;
-            if (this.activePhase === keyChosen) {
+       
+            if (this.activePhrase.checkLetter(keyChosen)) {
                  
-                
+               // keyChosen.classList.remove('wrong');
                 keyChosen.classList.add('chosen');
               
                 this.activePhrase.showMatchedLetter();
-                
-            } else  (this.activePhrase !== keyChosen) 
+
+            } else  ( !this.activePhrase.checkLetter(keyChosen)) 
                 keyChosen.classList.add('wrong');
                 
                 this.removeLife();
 
-               
+
 
             
             this.checkForWin();
+            
             if (this.checkForWin()) {
 
                 this.gameOver();
