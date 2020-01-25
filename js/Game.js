@@ -38,7 +38,7 @@ class Game {
     /*Method that randomizes phrases chossen */
 
 
-    getRandomPhrase() {
+    getRandomPhrase() { //generates random number assigns to phrase and returns random phrase
 
         let randomNumber = Math.floor(Math.random() * this.phrases.length);
 
@@ -48,50 +48,60 @@ class Game {
 
     startGame() {
 
-
         let overlay = document.getElementById('overlay'); //calls overlay id
         overlay.style.visibility = 'hidden'; //hides overlay 
         this.activePhrase = this.getRandomPhrase(); //sets random phrase to active phrase
         this.activePhrase.addPhraseToDisplay(); //displays active phrase to display
 
+
+
+
+
+
     }
 
     handleInteraction(keyChosen) {
- //   const letters = document.querySelectorAll('.key');
-//console.log(keyChosen);
-let keyChosenContent = keyChosen.textContent;
-              
-       
-            if (this.activePhrase.checkLetter(keyChosenContent)) {
-                 
-               // keyChosen.classList.remove('wrong');
-               keyChosen.disabled = true;
-                keyChosen.classList.add('chosen');
-              
-                this.activePhrase.showMatchedLetter(keyChosenContent);
-                this.checkForWin();
-                if (this.checkForWin()) {
+        /* handles game interactions, if the text content of the targeted letter returns true when 
+                                              checked against the letters in the activePhrase the chosen letter is disabled on the keyboard 
+                                              and the '.chosen' class is added to the targeted letter key. The 'keyChosen' is passed through 
+                                              the showMatchedLetter method of the active phrase. The checkForWin method is called. If checkForWin === true call
+                                              gameOver(true)  else '.wrong' class added to keyChosen, call removeLife()*/
 
-                    this.gameOver();
-             }
-    
-            } else  {
+        let keyChosenContent = keyChosen.textContent;
+
+
+        if (this.activePhrase.checkLetter(keyChosenContent)) {
+
+
             keyChosen.disabled = true;
-                keyChosen.classList.add('wrong');
-                
-                this.removeLife();
+            keyChosen.classList.add('chosen');
 
-
-
-            
+            this.activePhrase.showMatchedLetter(keyChosenContent);
             this.checkForWin();
+            if (this.checkForWin()) {
+
+                this.gameOver(true);
             }
-        
+
+        } else {
+            keyChosen.disabled = true;
+            keyChosen.classList.add('wrong');
+
+            this.removeLife();
+
+
+
+
+
+        }
+
 
 
     }
-    
+
     checkForWin() {
+        /* Method checks number of letters equal to number of shown letters, if numbers are equal returns true
+                           else returns false */
 
         const allLetters = document.querySelectorAll('.letter');
         const numLetters = allLetters.length;
@@ -109,6 +119,8 @@ let keyChosenContent = keyChosen.textContent;
 
     }
     removeLife() {
+        /* When called iterates over heart image and replaces with lostHeart image, increments missed counter by 1
+                           WHen counter equals 5 gameOver method is called with false parameter */
 
         const scoreBoard = document.querySelectorAll('li img');
         this.missed += 1;
@@ -133,15 +145,16 @@ let keyChosenContent = keyChosen.textContent;
 
 
 
-    gameOver(gameWin) {
+    gameOver(gameWin) { //changes overlay to winning or losing overlay
         let overlay = document.getElementById('overlay');
         const gameOverMessage = document.getElementById('game-over-message');
-        if (gameWin) {
-            overlay.classList.remove('start');
-            overlay.classList.add('win');
 
-            overlay.style.visibility = 'visible';
-            gameOverMessage.textContent = 'Congratulations, You Win!';
+        if (gameWin) { //if game is won (true) 
+            overlay.classList.remove('start'); //hides overlay
+            overlay.classList.add('win'); // win class is added to overlay
+
+            overlay.style.visibility = 'visible'; //overlay becomes visible
+            gameOverMessage.textContent = 'Congratulations, You Win!'; //changes text content to winning message
 
 
         } else {
@@ -152,9 +165,24 @@ let keyChosenContent = keyChosen.textContent;
 
             overlay.style.visibility = 'visible';
             gameOverMessage.textContent = 'You Lose! Try again.';
-
+           
         }
-
+      reset();
 
     }
+
+reset (){
+
+   // let overlay = document.getElementById('overlay');
+     let ul = document.getElementById('phrase');
+     while(ul.firstChild){
+
+ul.removeChild(ul.firstChild);
+
+     }
+
+
+
+}
+
 };

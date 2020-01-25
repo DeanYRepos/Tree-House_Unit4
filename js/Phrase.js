@@ -8,7 +8,7 @@ class Phrase {
         this.phrase = phrase.toLowerCase();
 
     }
-    addPhraseToDisplay() {
+    addPhraseToDisplay() {    
 
         const phraseUl = document.querySelector('ul');
         let displayPhrase = this.phrase;
@@ -45,7 +45,7 @@ class Phrase {
     }
 
 
-    showMatchedLetter(letter) {
+    showMatchedLetter(letter) {   
 
         let letterMatch = document.querySelectorAll('.letter');
         for (let i = 0; i < letterMatch.length; i++) {
