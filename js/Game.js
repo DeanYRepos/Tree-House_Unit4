@@ -167,22 +167,39 @@ class Game {
             gameOverMessage.textContent = 'You Lose! Try again.';
            
         }
-      reset();
+         this.reset();
 
     }
 
-reset (){
+reset(){ 
 
-   // let overlay = document.getElementById('overlay');
-     let ul = document.getElementById('phrase');
-     while(ul.firstChild){
 
+     let ul = document.querySelector('ul');
+    while(ul.firstChild){
 ul.removeChild(ul.firstChild);
 
+    }
+     
+let keys = document.querySelectorAll('.key');
+     
+     for(let i = 0; i < keys.length; i++){
+let list = keys[i];
+list.disabled = false;
+list.classList.remove('chosen');
+list.classList.remove('wrong');
+list.classList.add('key');
+
+
+     
+
      }
+    const newScoreBoard = document.querySelectorAll('li img');
+    for(let j = 0; j < newScoreBoard.length; j++){
+
+        newScoreBoard[j].src ='images/liveHeart.png';
+
+    }
 
 
-
-}
-
+    }
 };

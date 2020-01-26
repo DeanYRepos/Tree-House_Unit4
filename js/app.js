@@ -11,6 +11,7 @@ const button = document.getElementById('btn__reset');
 button.addEventListener('click', () => { //eventlistener activates new game when start button is clicked
 
     game = new Game();
+   // game.reset();
     game.startGame();
 
 
