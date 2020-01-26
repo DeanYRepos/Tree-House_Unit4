@@ -8,7 +8,11 @@ class Phrase {
         this.phrase = phrase.toLowerCase();
 
     }
-    addPhraseToDisplay() {    
+    addPhraseToDisplay() {
+        /** method iterates over targeted phrase characters
+                                     checks if character matches regex parameters
+                                     if match, hidden letter added to display else if space matches regex,
+                                      a space is added to display  */
 
         const phraseUl = document.querySelector('ul');
         let displayPhrase = this.phrase;
@@ -38,14 +42,17 @@ class Phrase {
 
 
     }
-    checkLetter(letter) {
+    checkLetter(letter) { //checks if letter is included in selected phrase
 
         return this.phrase.includes(letter); //returns true if letter is included in phrase, false if not included
 
     }
 
 
-    showMatchedLetter(letter) {   
+    showMatchedLetter(letter) {
+        /**  Method shows matched letter to display
+                                           iterates over all letters, if innerHTML matchs letter passed to method
+                                           show class added to lettr. letterMAtch returned */
 
         let letterMatch = document.querySelectorAll('.letter');
         for (let i = 0; i < letterMatch.length; i++) {
@@ -54,14 +61,14 @@ class Phrase {
 
 
                 letterMatch[i].classList.remove('hide', 'letter', '`${letterMatch[i]}`');
-                letterMatch[i].classList.add('show', 'letter','`${letterMatch[i]}`');
-               
-               
+                letterMatch[i].classList.add('show', 'letter', '`${letterMatch[i]}`');
+
+
 
 
             }
-          
-           
+
+
         }
         return letterMatch;
     }

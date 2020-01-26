@@ -18,8 +18,8 @@ button.addEventListener('click', () => { //eventlistener activates new game when
 })
 
 
-const keys = document.querySelectorAll('.key'); 
-keys.forEach(key => {                       //iterates over keys
+const keys = document.querySelectorAll('.key');
+keys.forEach(key => { //iterates over keys
     key.addEventListener('click', (e) => { //listens for clicks on targeted keys
 
 
@@ -32,3 +32,9 @@ keys.forEach(key => {                       //iterates over keys
 
 
 });
+keys.addEventListener('keyup', (e) =>{
+
+
+
+
+})
