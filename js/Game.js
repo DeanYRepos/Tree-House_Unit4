@@ -47,14 +47,16 @@ class Game {
     }
 
     startGame() {
-
-        let overlay = document.getElementById('overlay'); //calls overlay id
-        overlay.style.visibility = 'hidden'; //hides overlay 
+        $('#overlay').fadeOut('1000');
+       let overlay = document.getElementById('overlay'); //calls overlay id
+      // overlay.style.visibility = 'hidden'; //hides overlay 
+        
         this.activePhrase = this.getRandomPhrase(); //sets random phrase to active phrase
         this.activePhrase.addPhraseToDisplay(); //displays active phrase to display
+        let banner = document.getElementById('banner');
 
-
-
+     
+         //  overlay.style.backgroundColor = this.getRandomColor();
 
 
 
@@ -70,9 +72,9 @@ class Game {
         let keyChosenContent = keyChosen.textContent;
 
 
-        if (this.activePhrase.checkLetter(keyChosenContent)) {
+        if (this.activePhrase.checkLetter(keyChosenContent) || this.activePhrase.checkLetter(keyChosen.key)) {
 
-
+          
             keyChosen.disabled = true;
             keyChosen.classList.add('chosen');
 
@@ -83,7 +85,8 @@ class Game {
                 this.gameOver(true);
             }
 
-        } else {
+        } else if  (!this.activePhrase.checkLetter(keyChosenContent) && !this.activePhrase.checkLetter(keyChosen.key)) {
+
             keyChosen.disabled = true;
             keyChosen.classList.add('wrong');
 
@@ -95,7 +98,7 @@ class Game {
 
         }
 
-
+console.log(keyChosen);
 
     }
 
@@ -153,19 +156,20 @@ class Game {
             overlay.classList.remove('start'); //hides overlay
             overlay.classList.add('win'); // win class is added to overlay
             overlay.classList.remove('lose');
-            overlay.style.visibility = 'visible'; //overlay becomes visible
+          
+           $('#overlay').fadeIn('1000');
             gameOverMessage.textContent = 'Congratulations, You Win!'; //changes text content to winning message
-
+            overlay.style.backgroundColor = this.getRandomColor();
 
         } else  {
 
 
             overlay.classList.remove('start');
             overlay.classList.add('lose');
+            $('#overlay').fadeIn('1000');
 
-            overlay.style.visibility = 'visible';
             gameOverMessage.textContent = 'You Lose! Try again.';
-
+            overlay.style.backgroundColor = this.getRandomColor();
         }
         this.reset();
 
@@ -181,7 +185,7 @@ class Game {
         }
 
         let keys = document.querySelectorAll('.key');
-let resetOverlay = document.getElementById('overlay');
+
 
         for (let i = 0; i < keys.length; i++) {
             let list = keys[i];
@@ -189,7 +193,7 @@ let resetOverlay = document.getElementById('overlay');
             list.classList.remove('chosen');
             list.classList.remove('wrong');
             list.classList.add('key');
-
+            overlay.style.backgroundColor = this.getRandomColor();
 
 
 
@@ -203,4 +207,12 @@ let resetOverlay = document.getElementById('overlay');
 
 
     }
+     getRandomColor() {         //generates random color
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
 };
